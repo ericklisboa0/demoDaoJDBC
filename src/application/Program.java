@@ -2,6 +2,7 @@ package application;
 
 import java.util.Date;
 
+import model.dao.daoFactory;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -11,10 +12,14 @@ public class Program {
 		// TODO Auto-generated method stub
 
 		Department dep = new Department(1, "books");
-		System.out.println(dep);
 		
 		Seller seller = new Seller(2, "erick", "erickllm", new Date(), 3500.00, dep);
+		
+		sellerDao sellerDao = daoFactory.createSellerDao();
+		
 		System.out.println(seller);
+		
+		
 		
 	}
 
